@@ -1,4 +1,4 @@
-class DataModel {
+class WeatherModel {
   int? queryCost;
   double? latitude;
   double? longitude;
@@ -12,7 +12,7 @@ class DataModel {
   Stations? stations;
   CurrentConditions? currentConditions;
 
-  DataModel(
+  WeatherModel(
       {this.queryCost,
       this.latitude,
       this.longitude,
@@ -26,7 +26,7 @@ class DataModel {
       this.stations,
       this.currentConditions});
 
-  DataModel.fromJson(Map<String, dynamic> json) {
+  WeatherModel.fromJson(Map<String, dynamic> json) {
     queryCost = json['queryCost'];
     latitude = json['latitude'];
     longitude = json['longitude'];
@@ -62,6 +62,7 @@ class DataModel {
     if (this.days != null) {
       data['days'] = this.days!.map((v) => v.toJson()).toList();
     }
+
     if (this.stations != null) {
       data['stations'] = this.stations!.toJson();
     }
